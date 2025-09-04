@@ -1,13 +1,13 @@
 pipeline:
-  name: cd-pipline
-  identifier: IDP dsadas     9831209382103981&#&$&&$&$    _Provision_New_User_Account_New
+  name: kushal
+  identifier: IDP dsadas     9831209382103981&#&$&&$&$    _Provision_New_User_Account_N
   projectIdentifier: demo
   orgIdentifier: default
   tags: {}
   stages:
     - stage:
-        name: demo
-        identifier: demo
+        name: e
+        identifier: e
         description: ""
         type: Custom
         spec:
@@ -20,6 +20,12 @@ pipeline:
                   spec:
                     duration: 10s
               - step:
+                  type: Wait
+                  name: Wait_2
+                  identifier: Wait_2
+                  spec:
+                    duration: 10s
+              - step:
                   type: ShellScript
                   name: ShellScript_1
                   identifier: ShellScript_1
@@ -29,8 +35,8 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "kushal"
+                        script: <+input>
                     environmentVariables: []
                     outputVariables: []
-                  timeout: <+input>
+                  timeout: 10m
         tags: {}
