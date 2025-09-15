@@ -1,6 +1,6 @@
 pipeline:
   name: bguhj
-  identifier: -aa
+  identifier: '-1'
   projectIdentifier: default_project
   orgIdentifier: default
   tags: {}
