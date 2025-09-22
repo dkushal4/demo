@@ -1,6 +1,6 @@
 pipeline:
   name: bguhj
-  identifier: 'jbb'
+  identifier: 'bb'
   projectIdentifier: default_project
   orgIdentifier: defaul
   tags: {}
