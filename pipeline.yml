@@ -2,7 +2,7 @@ pipeline:
   name: bguhj
   identifier: '-1'
   projectIdentifier: default_project
-  orgIdentifier: default
+  orgIdentifier: defaul
   tags: {}
   stages:
     - stage:
