@@ -1,0 +1,22 @@
+pipeline:
+  name: dsa
+  identifier: dsa
+  projectIdentifier: demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: fdwas
+        identifier: fdwas
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10s
+        tags: {}
