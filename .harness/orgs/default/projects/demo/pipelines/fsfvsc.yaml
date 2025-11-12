@@ -1,0 +1,22 @@
+pipeline:
+  name: fsfvsc
+  identifier: fsfvsc
+  projectIdentifier: demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: fscvx
+        identifier: fscvx
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10m
+        tags: {}
