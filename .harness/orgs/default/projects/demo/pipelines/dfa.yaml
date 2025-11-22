@@ -6,17 +6,39 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: dfas
-        identifier: dfas
-        description: ""
+        name: test_stage
+        identifier: test_stage
         type: Custom
         spec:
           execution:
             steps:
               - step:
-                  type: Wait
-                  name: Wait_1
-                  identifier: Wait_1
+                  type: ShellScript
+                  name: terraform_plan
+                  identifier: terraform_plan
                   spec:
-                    duration: 10m
-        tags: {}
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |
+                          echo "Simulating first terraform step"
+                          sleep 3
+                          echo "First step done"
+                  timeout: 5m
+              - step:
+                  type: ShellScript
+                  name: terraform_plan_only
+                  identifier: terraform_plan_only
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |
+                          echo "Second step starting"
+                          sleep 3
+                          echo "This message might not appear due to log collision"
+                  timeout: 5m
