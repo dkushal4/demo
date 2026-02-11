@@ -20,3 +20,6 @@ pipeline:
                   spec:
                     duration: 10m
         tags: {}
+        sendGitStatus:
+          enabled: true
+          name: test
