@@ -1,0 +1,22 @@
+pipeline:
+  name: test-m2
+  identifier: testm2
+  projectIdentifier: demo1
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: sgtage1
+        identifier: sgtage1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10m
+        tags: {}
