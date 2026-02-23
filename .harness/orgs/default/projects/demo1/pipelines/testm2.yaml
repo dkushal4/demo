@@ -6,28 +6,51 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: sgtage1
-        identifier: sgtage1
+        name: stage1
+        identifier: stage1
         description: ""
         type: Custom
         spec:
           execution:
             steps:
               - step:
-                  type: ShellScript
-                  name: ShellScript_1
-                  identifier: ShellScript_1
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
                   spec:
-                    shell: Bash
-                    executionTarget: {}
-                    source:
-                      type: Inline
-                      spec:
-                        script: echo 1
-                    environmentVariables: []
-                    outputVariables: []
-                  timeout: 10m
+                    duration: 10m
         tags: {}
-        sendGitStatus:
-          enabled: true
-          name: test
+    - stage:
+        name: stage2
+        identifier: stage2
+        depends-on:
+          - stage1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10m
+        tags: {}
+    - stage:
+        name: stage3
+        identifier: stage3
+        depends-on:
+          - stage1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10m
+        tags: {}
