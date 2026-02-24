@@ -23,3 +23,26 @@ pipeline:
         sendGitStatus:
           enabled: true
           name: test
+    - stage:
+        name: stage2
+        identifier: stage2
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo 2
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
