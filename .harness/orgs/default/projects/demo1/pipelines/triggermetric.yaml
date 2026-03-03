@@ -5,9 +5,40 @@ pipeline:
   orgIdentifier: default
   tags: {}
   stages:
+    - parallel:
+        - stage:
+            name: stage1
+            identifier: stage1
+            description: ""
+            type: Custom
+            spec:
+              execution:
+                steps:
+                  - step:
+                      type: Wait
+                      name: Wait_1
+                      identifier: Wait_1
+                      spec:
+                        duration: 10m
+            tags: {}
+        - stage:
+            name: stage2
+            identifier: stage2
+            description: ""
+            type: Custom
+            spec:
+              execution:
+                steps:
+                  - step:
+                      type: Wait
+                      name: Wait_1
+                      identifier: Wait_1
+                      spec:
+                        duration: 10m
+            tags: {}
     - stage:
-        name: stage1
-        identifier: stage1
+        name: stage3
+        identifier: stage3
         description: ""
         type: Custom
         spec:
